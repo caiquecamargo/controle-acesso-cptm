@@ -25,7 +25,8 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);
 
 void systemInit()
 {
-  Serial.println("Sistema iniciado");
+  Serial.println(">>>>>> Sistema iniciado");
+  Serial.println();
   for (uint8_t i = 0; i < 3; i++)
   {
     digitalWrite(greenLed, LED_ON);
@@ -37,31 +38,33 @@ void systemInit()
   }
 }
 
+void printCard(byte *card)
+{
+  Serial.print(card[0]);
+  Serial.print(" ");
+  Serial.print(card[1]);
+  Serial.print(" ");
+  Serial.print(card[2]);
+  Serial.print(" ");
+  Serial.println(card[3]);
+}
+
 void printReadCard()
 {
   Serial.print(">>>>>> Cartão lido com sucesso com o endereço: ");
-  Serial.print(readCard[0]);
-  Serial.print(readCard[1]);
-  Serial.print(readCard[2]);
-  Serial.println(readCard[3]);
+  printCard(readCard);
 }
 
 void printStoredCard()
 {
   Serial.print(">>>>>> Cartão encontrado com sucesso com o endereço: ");
-  Serial.print(storedCard[0]);
-  Serial.print(storedCard[1]);
-  Serial.print(storedCard[2]);
-  Serial.println(storedCard[3]);
+  printCard(storedCard);
 }
 
 void printMasterCard()
 {
-  Serial.print(">>>>>> Cartão encontrado com sucesso com o endereço: ");
-  Serial.print(masterCard[0]);
-  Serial.print(masterCard[1]);
-  Serial.print(masterCard[2]);
-  Serial.println(masterCard[3]);
+  Serial.print(">>>>>> Cartão MASTER encontrado com sucesso com o endereço: ");
+  printCard(masterCard);
 }
 
 void flashLed(uint32_t time, uint8_t quantity, uint8_t chosenLed)
@@ -174,8 +177,12 @@ void readID(uint8_t position)
 
 void printStore()
 {
+  Serial.println();
+  Serial.println("-------------------------------------------------------");
+  Serial.println(">>>>>> Mostrando todas as posições salvas.");
   Serial.print(">>>>>>>>> Número mágico: ");
   Serial.println(EEPROM.read(1));
+  printMasterCard();
   Serial.print(">>>>>>>>> Quantidade de cartões cadastrados: ");
   Serial.println(EEPROM.read(0));
   for (uint8_t i = 0; i < EEPROM.read(0); i++)
@@ -184,11 +191,43 @@ void printStore()
     Serial.print(">>>>>>>>> ");
     Serial.print(i);
     Serial.print(" => ");
-    Serial.print(storedCard[0]);
-    Serial.print(storedCard[1]);
-    Serial.print(storedCard[2]);
-    Serial.println(storedCard[3]);
+    printCard(storedCard);
   }
+  Serial.println("-------------------------------------------------------");
+  Serial.println();
+}
+
+boolean compare(uint8_t position)
+{
+  if (storedCard[position] == 255)
+    return true;
+  return false;
+}
+
+void readAllAndCompare()
+{
+  Serial.println(">>>>>> Teste de leitura e comparação: ");
+  for (uint8_t i = 0; i < EEPROM.read(0); i++)
+  {
+    readID(i);
+    Serial.print(">>>>>>>>> ");
+    Serial.print(i);
+    Serial.print(" => ");
+    Serial.print((compare(0)) ? "OK" : "NO");
+    Serial.print(" ");
+    Serial.print((compare(1)) ? "OK" : "NO");
+    Serial.print(" ");
+    Serial.print((compare(2)) ? "OK" : "NO");
+    Serial.print(" ");
+    Serial.println((compare(3)) ? "OK" : "NO");
+  }
+}
+
+bool hasPossiblesToWrite()
+{
+  if (EEPROM.read(0) < 64)
+    return true;
+  return false;
 }
 
 uint8_t findIDSlot(byte id[])
@@ -226,16 +265,24 @@ void writeID(byte id[])
 {
   //STORAGE A CARD ID
   Serial.println(">>>>>> Modo de gravação.");
-  uint8_t numberOfEntries = EEPROM.read(0);
-  uint8_t start = (numberOfEntries * 4) + 2;
 
-  numberOfEntries++;
-  EEPROM.write(0, numberOfEntries);
+  if (hasPossiblesToWrite())
+  {
+    uint8_t numberOfEntries = EEPROM.read(0);
+    uint8_t start = (numberOfEntries * 4) + 2;
 
-  for (uint8_t i = 0; i < 4; i++)
-    EEPROM.write(start + i, id[i]);
+    numberOfEntries++;
+    EEPROM.write(0, numberOfEntries);
 
-  successWrite();
+    for (uint8_t i = 0; i < 4; i++)
+      EEPROM.write(start + i, id[i]);
+
+    successWrite();
+  }
+  else
+  {
+    Serial.println(">>>>>> Não foi possível gravar. Memória cheia.");
+  }
 }
 
 void deleteID(byte id[])
@@ -307,6 +354,14 @@ void hardResetMode()
   asm("jmp 0");
 }
 
+void testingEEPROM()
+{
+  Serial.println(">>>>>> TESTING MODE");
+  EEPROM.write(0, 64);
+  printStore();
+  readAllAndCompare();
+}
+
 void setup()
 {
   pinMode(greenLed, OUTPUT);
@@ -323,7 +378,7 @@ void setup()
   SPI.begin();
   mfrc522.PCD_Init();
 
-  Serial.println("INIT");
+  Serial.println(">>>>>> INIT");
 
   //IF DON'T HAVE A MASTERCARD CADASTRED
   if (EEPROM.read(1) != 143)
@@ -357,17 +412,33 @@ void setup()
 
   printMasterCard();
   systemInit();
+
+  //ENABLE IF IN TEST
+  // testingEEPROM();
 }
 
 void loop()
 {
   if (isInProgramMode())
   {
-    digitalWrite(redLed, LED_ON);
-    digitalWrite(greenLed, LED_ON);
+    Serial.println(">>>>>> Modo de programação. Aguardando cartão MASTER.");
+    if (!hasPossiblesToWrite())
+      Serial.println(">>>>>> Sem espaço para novos cadastros.");
 
-    if (successRead())
-      (isMaster(readCard)) ? accessProgramMode() : notAMasterCard();
+    while (isInProgramMode())
+    {
+      digitalWrite(redLed, LED_ON);
+      digitalWrite(greenLed, LED_ON);
+
+      if (!hasPossiblesToWrite())
+        flashLed(300, 1, redLed);
+
+      if (successRead())
+      {
+        (isMaster(readCard)) ? accessProgramMode() : notAMasterCard();
+        Serial.println(">>>>>> Modo de programação. Aguardando cartão MASTER.");
+      }
+    }
   }
   else if (isInHardResetMode())
     hardResetMode();
