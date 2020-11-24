@@ -6,6 +6,8 @@
 #define LED_ON HIGH
 #define LED_OFF LOW
 
+#define MAX_REGISTER 64
+
 #define OPEN HIGH
 #define CLOSE LOW
 
@@ -225,7 +227,7 @@ void readAllAndCompare()
 
 bool hasPossiblesToWrite()
 {
-  if (EEPROM.read(0) < 64)
+  if (EEPROM.read(0) < MAX_REGISTER)
     return true;
   return false;
 }
@@ -282,6 +284,7 @@ void writeID(byte id[])
   else
   {
     Serial.println(">>>>>> Não foi possível gravar. Memória cheia.");
+    flashLed(200, 3, redLed);
   }
 }
 
