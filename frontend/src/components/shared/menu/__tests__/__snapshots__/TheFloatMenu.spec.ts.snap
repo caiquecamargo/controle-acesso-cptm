@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheFloatMenu component test should render the component default state 1`] = `
+"<nav class=\\"fixed top-0 left-0 flex flex-col items-start w-3/4 h-screen gap-6 py-5 pt-24 bg-black\\" style=\\"transform: translateX(-99.99999999999999vw) ; opacity: 1;\\">
+  <div style=\\"transform: translateX(-99.99999999999999vw) scale(2) ;\\"> DEFAULT </div>
+</nav>"
+`;

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheImageBackground test suit renders the component with src prop 1`] = `
+"<div class=\\"absolute inset-0 z-0\\">
+  <!--v-if--><img class=\\"object-cover min-w-full min-h-full\\" src=\\"https:/localhost/test\\" alt=\\"image\\">
+</div>"
+`;
+
+exports[`TheImageBackground test suit renders the component with src prop 2`] = `
+"<div class=\\"absolute inset-0 z-0\\">
+  <the-picture-stub srcset=\\"[object Object]\\" alt=\\"image\\"></the-picture-stub>
+  <!--v-if-->
+</div>"
+`;

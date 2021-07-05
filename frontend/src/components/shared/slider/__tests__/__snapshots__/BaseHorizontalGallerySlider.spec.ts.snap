@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseHorizontalGallerySlider component test should swap position when touch the screen. 1`] = `
+"<section class=\\"grid items-center justify-center grid-cols-1 lg:grid-cols-slider\\"><span class=\\"
+        left-0
+        hidden
+        cursor-pointer
+        duration-450
+        h-1/2
+        top-1/4
+        lg:block
+        hover:duration-150
+        text-true-gray-500
+        hover:text-true-gray-700
+      \\"><svg width=\\"58.667\\" height=\\"101.033\\" viewBox=\\"0 0 58.667 101.033\\"><g transform=\\"matrix(0.999, 0.035, -0.035, 0.999, -520.017, -852.706)\\"><line x1=\\"34.075\\" y2=\\"39\\" transform=\\"translate(563.5 844.5)\\" fill=\\"none\\" stroke-linecap=\\"round\\" stroke-width=\\"15\\"></line><line x1=\\"34.075\\" y1=\\"39\\" transform=\\"translate(563.5 883.5)\\" fill=\\"none\\" stroke-linecap=\\"round\\" stroke-width=\\"15\\"></line></g></svg></span>
+  <div class=\\"relative
+        flex
+        items-center
+        justify-start
+        w-full
+        h-full
+        mx-auto
+        overflow-hidden
+        lg:w-full\\">
+    <div style=\\"width: 300px; position: absolute; left: calc(50% - 150px); z-index: 3; opacity: 0; transform: translateX(-300px) scale(0.8) ;\\">Test</div>
+    <div style=\\"width: 300px; position: absolute; left: calc(50% - 150px); z-index: 4; opacity: 1; transform: translateX(-150px) scale(0.9) ;\\">Test</div>
+    <div class=\\"test\\" style=\\"width: 300px; position: absolute; left: calc(50% - 150px); z-index: 5; opacity: 1; transform: translateX(0px) scale(1) ;\\">Test</div>
+    <div style=\\"width: 300px; position: absolute; left: calc(50% - 150px); z-index: 4; opacity: 1; transform: translateX(150px) scale(0.9) ;\\">Test</div>
+    <div style=\\"width: 300px; position: absolute; left: calc(50% - 150px); z-index: 3; opacity: 0; transform: translateX(300px) scale(0.8) ;\\">Test</div>
+  </div><span class=\\"
+        right-0
+        hidden
+        transform
+        rotate-180
+        cursor-pointer
+        duration-450
+        h-1/2
+        top-1/4
+        lg:block
+        hover:duration-150
+        text-true-gray-500
+        hover:text-true-gray-700
+      \\"><svg width=\\"58.667\\" height=\\"101.033\\" viewBox=\\"0 0 58.667 101.033\\"><g transform=\\"matrix(0.999, 0.035, -0.035, 0.999, -520.017, -852.706)\\"><line x1=\\"34.075\\" y2=\\"39\\" transform=\\"translate(563.5 844.5)\\" fill=\\"none\\" stroke-linecap=\\"round\\" stroke-width=\\"15\\"></line><line x1=\\"34.075\\" y1=\\"39\\" transform=\\"translate(563.5 883.5)\\" fill=\\"none\\" stroke-linecap=\\"round\\" stroke-width=\\"15\\"></line></g></svg></span>
+</section>"
+`;

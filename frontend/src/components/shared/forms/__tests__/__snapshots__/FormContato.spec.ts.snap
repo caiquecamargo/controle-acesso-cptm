@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormContato component test should render the default component. 1`] = `
+"<form>
+  <div class=\\"relative h-16 w-full\\"><input class=\\"bg-none p-3 pb-1 w-full border-b-2 border-t-0 border-r-0 border-l-2 border-current text-current rounded focus:border-secondary focus:ring-0\\" type=\\"text\\" name=\\"Nome\\" id=\\"Nome\\"><label class=\\"absolute rounded top-1 on-focus left-3 text-current bg-none z-10 p-1 duration-450 decorator-required\\" for=\\"Nome\\">Nome</label></div>
+  <div class=\\"relative h-16 w-full\\"><input class=\\"bg-none p-3 pb-1 w-full border-b-2 border-t-0 border-r-0 border-l-2 border- border-current text-current rounded focus:border-secondary focus:ring-0\\" type=\\"text\\" name=\\"Email\\" id=\\"Email\\"><label class=\\"absolute rounded top-1 on-focus left-3 text-current bg-none z-10 p-1 duration-450\\" for=\\"Email\\">Email</label></div>
+  <div class=\\"relative h-16 w-full\\"><input class=\\"bg-none p-3 pb-1 w-full border-b-2 border-t-0 border-r-0 border-l-2 border- border-current text-current rounded focus:border-secondary focus:ring-0\\" type=\\"text\\" name=\\"Telefone\\" id=\\"Telefone\\"><label class=\\"absolute rounded top-1 on-focus left-3 text-current bg-none z-10 p-1 duration-450\\" for=\\"Telefone\\">Telefone</label></div>
+  <div class=\\"relative w-full\\"><textarea class=\\"bg-none p-3 pb-1 w-full border-b-2 border-t-0 border-r-0 border-l-2 border- border-current text-current rounded focus:border-secondary focus:ring-0\\" style=\\"height: 150px;\\" type=\\"text\\" name=\\"Descrição\\" id=\\"Descrição\\"></textarea><label class=\\"absolute rounded top-1 on-focus left-3 text-current bg-none z-10 p-1 duration-450\\" for=\\"Descrição\\">Descrição</label></div><button class=\\"btn-xl-border-md
+        font-opensans font-bold
+        clamptext-1-14
+        py-1
+        justify-self-center
+        hover:text-white
+        hover:bg-primary\\">
+    <p>ENVIAR</p>
+  </button>
+</form>"
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheImageGallery test suit renders the component with the props passed 1`] = `
+"<section class=\\"flex flex-col h-full gap-3\\">
+  <div class=\\"flex-grow\\">
+    <the-image-content-stub class=\\"h-120\\" src=\\"https:/localhost/test\\" description=\\"image\\"></the-image-content-stub>
+  </div>
+  <div class=\\"h-20\\">
+    <base-horizontal-slider-stub resizeevent=\\"[object Object]\\" visibleelements=\\"3\\"></base-horizontal-slider-stub>
+  </div>
+</section>"
+`;
