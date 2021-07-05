@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheParagraph test suit should render first element with major class if the major setted to First 1`] = `
+"<section class=\\"grid items-center justify-center text-current grid-cols-1 gap-10 lg:grid-cols-3 font-opensans clamptext-085-12 leading-loose\\">
+  <div class=\\"major\\">
+    <div> FIRST </div>
+  </div>
+  <div class=\\"\\">
+    <div> SECOND </div>
+  </div>
+</section>"
+`;
+
+exports[`TheParagraph test suit should render only the first element if hasSecond equals to false 1`] = `
+"<section class=\\"grid items-center justify-center text-current grid-cols-1 gap-10 lg:grid-cols-3 font-opensans clamptext-085-12 leading-loose\\">
+  <div class=\\"col-span-full\\">
+    <div> FIRST </div>
+  </div>
+  <!--v-if-->
+</section>"
+`;
+
+exports[`TheParagraph test suit should render only the second element if hasFirst equals to false 1`] = `
+"<section class=\\"grid items-center justify-center text-current grid-cols-1 gap-10 lg:grid-cols-3 font-opensans clamptext-085-12 leading-loose\\">
+  <!--v-if-->
+  <div class=\\"col-span-full major\\">
+    <div> SECOND </div>
+  </div>
+</section>"
+`;
+
+exports[`TheParagraph test suit should render the Paragraph if has first and second parameters 1`] = `
+"<section class=\\"grid items-center justify-center text-current grid-cols-1 gap-10 lg:grid-cols-3 font-opensans clamptext-085-12 leading-loose\\">
+  <div class=\\"\\">
+    <div> FIRST </div>
+  </div>
+  <div class=\\"major\\">
+    <div> SECOND </div>
+  </div>
+</section>"
+`;

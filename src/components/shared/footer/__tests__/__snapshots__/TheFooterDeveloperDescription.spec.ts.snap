@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheFooterDeveloperDescription component test should render the default component 1`] = `"<section class=\\"py-4 col-span-full\\"><a class=\\"btn-sm clamptext-08-11 text-secondary hover:text-white\\" href=\\"https://www.linkedin.com/in/caique-de-camargo-40206756/\\" target=\\"_blank\\"> Desenvolvido por Caique de Camargo. Todos os direitos reservados a CMF Carnes Nobres. </a></section>"`;

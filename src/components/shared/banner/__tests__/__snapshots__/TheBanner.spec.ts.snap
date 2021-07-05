@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheBanner.vue renders the default component with the props passed 1`] = `
+"<div class=\\"relative w-full overflow-hidden h-45vw\\">
+  <div class=\\"absolute inset-0 z-0\\">
+    <picture>
+      <source srcset=\\"minimal\\" media=\\"(max-width: 800px)\\" width=\\"800\\" height=\\"400\\">
+      <source srcset=\\"medium\\" media=\\"(max-width: 1000px)\\" width=\\"1000\\" height=\\"450\\">
+      <source srcset=\\"large\\" media=\\"(max-width: 1200px)\\" width=\\"1200\\" height=\\"500\\">
+      <source srcset=\\"huge\\" media=\\"(min-width: 1200px)\\" width=\\"1200\\" height=\\"500\\"><img class=\\"object-cover w-full min-h-full\\" src=\\"default\\" alt=\\"banner\\">
+    </picture>
+    <!--v-if-->
+  </div>
+</div>"
+`;

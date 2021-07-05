@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheButtonSandwich component test should render the component default state 1`] = `
+"<div class=\\"cursor-pointer mr-4\\">
+  <div class=\\"h-1 w-7 mb-1 rounded bg-current\\" style=\\"transform: translateY(8.881784197001252e-16px) ;\\"></div>
+  <div class=\\"h-1 w-7 mb-1 rounded bg-current\\" style=\\"opacity: 0.9999999999999999; transform: translateY(0px) ;\\"></div>
+  <div class=\\"h-1 w-7 rounded bg-current\\" style=\\"transform: translateY(-8.881784197001252e-16px) ;\\"></div>
+</div>"
+`;

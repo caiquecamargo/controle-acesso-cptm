@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheFooterHeader component test should render the default component 1`] = `"<header class=\\"mx-auto mt-10 text-center text-white mb-14 clamptext-11-14\\">TITLE</header>"`;
