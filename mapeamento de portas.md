@@ -15,6 +15,8 @@
 
 | PORTA | FUNÇÃO       | COR DO CABO |
 | :---- | :----------- | :---------- |
-| 4     | LED VERDE    |
-| 5     | LED VERMELHO |
+| 4     | LED VERMELHO |
+| 5     | LED VERDE    |
 | 6     | RELÉ PORTA   |
+
+![Circuito](./circuito.draw.io)
