@@ -11,12 +11,34 @@
 | 18    | SCK    |
 | --    | NC     |
 
+## MAPEAMENTO mSD
+
+| PORTA | FUNÇÃO | COR DO CABO |
+| :---- | :----- | :---------- |
+| GND   | GND    |
+| 3.3V  | 3.3v   |
+| 15    | CS     |
+| 12    | MOSI   |
+| 13    | MISO   |
+| 14    | SCK    |
+
+## MAPEAMENTO RTC
+
+| PORTA | FUNÇÃO | COR DO CABO |
+| :---- | :----- | :---------- |
+| GND   | GND    |
+| 3.3V  | 3.3v   |
+| 16    | CS     |
+| 12    | MOSI   |
+| 13    | MISO   |
+| 14    | SCK    |
+
 ## Mapeamento dos LEDS/RELÉ
 
 | PORTA | FUNÇÃO       | COR DO CABO |
 | :---- | :----------- | :---------- |
-| 4     | LED VERMELHO |
-| 5     | LED VERDE    |
-| 6     | RELÉ PORTA   |
+| 6     | LED VERMELHO |
+| 7     | LED VERDE    |
+| 8     | RELÉ PORTA   |
 
-![Circuito](./circuito.draw.io)
+![Circuito](./assets/circuito.png)
