@@ -61,7 +61,7 @@ Controle de acesso feito com Esp32 e módulo MFRC32 para leitura de cartão RFID
 - Base (soquete) para LED 5mm (x2)
 - Conector RJ45 Fêmea
 - Relé 5V/300V
-- Transistor
+- Transistor (BC337)
 - Borne 2edgk (x2)
 - Borne 2edgrc (x2)
 - Caixa para circuito 85mm x 124mm x 53mm (x2)
