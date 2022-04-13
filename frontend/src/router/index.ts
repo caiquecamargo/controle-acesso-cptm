@@ -1,30 +1,30 @@
+import Home from "@/views/home.vue";
+import UserAdd from "@/views/user-add.vue";
+import UserList from "@/views/user-list.vue";
+import User from "@/views/user.vue";
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import AddUser from "../views/AddUser.vue";
-import AllUsers from "../views/AllUsers.vue";
-import Home from "../views/Home.vue";
-import User from "../views/User.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
     path: "/usuarios",
-    name: "AllUsers",
-    component: AllUsers,
+    name: "user-list",
+    component: UserList,
   },
   {
     path: "/usuario/:id",
     component: User,
-    name: "User",
+    name: "user",
     props: true,
   },
   {
     path: "/adicionar-usuario",
-    name: "AddUser",
-    component: AddUser,
+    name: "user-add",
+    component: UserAdd,
   },
 ];
 

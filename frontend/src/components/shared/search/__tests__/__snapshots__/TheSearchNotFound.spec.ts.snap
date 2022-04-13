@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TheSearchNotFound component test. should render the default component. 1`] = `"<p class=\\"font-opensans text-center clamptext-08-12 text-primary italic mt-10\\"> Não encontrados resultados para a pesquisa. Tente novamente com outro valor. </p>"`;

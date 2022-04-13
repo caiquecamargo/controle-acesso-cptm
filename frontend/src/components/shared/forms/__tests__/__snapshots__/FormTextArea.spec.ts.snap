@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FormTextArea component test should render the default component 1`] = `
-"<div class=\\"relative w-full\\"><textarea class=\\"bg-none p-3 pb-1 w-full border-b-2 border-t-0 border-r-0 border-l-2 border- border-current text-current rounded focus:border-secondary focus:ring-0\\" type=\\"text\\" name=\\"1000\\" id=\\"1000\\"></textarea>
-  <!--v-if-->
-</div>"
-`;

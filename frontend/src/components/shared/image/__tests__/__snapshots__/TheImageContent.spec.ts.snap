@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TheImageContent test suit renders the component with the props passed 1`] = `"<img loading=\\"lazy\\" class=\\"w-full object-cover\\" src=\\"https:/localhost/test\\" alt=\\"image\\">"`;

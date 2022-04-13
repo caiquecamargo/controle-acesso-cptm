@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TheFooter test suit should render the default component 1`] = `
-"<footer class=\\"w-full bg-primary\\">
-  <the-footer-container-stub></the-footer-container-stub>
-</footer>"
-`;

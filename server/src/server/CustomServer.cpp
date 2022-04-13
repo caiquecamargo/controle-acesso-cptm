@@ -243,10 +243,15 @@ void CustomServer::deleteUserHandler(AsyncWebServerRequest *request) {
 }
 
 void CustomServer::createAccessPoint() {
-  log("Creating AccessPoint...");
-  WiFi.mode(WIFI_AP);
-  WiFi.softAP(apSsid, apPassword);
-  ip = WiFi.softAPIP();
+  log("Connecting to Wifi...");
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(apSsid, apPassword);
+  if (WiFi.waitForConnectResult() != WL_CONNECTED) {
+    log("Error on connecting!");
+    return;
+  }
+  
+  ip = WiFi.localIP();
   log("IP Address: " + (std::string) ip.toString().c_str());
 }
 

@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`FormDefault component test should render the default component. 1`] = `
-"<form class=\\"grid gap-4\\" autocomplete=\\"off\\" data-netlify=\\"true\\">
-  <div> TEST </div>
-</form>"
-`;

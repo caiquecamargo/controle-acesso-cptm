@@ -8,8 +8,8 @@
 #include "accessController/AccessController.h"
 #include "mutex/mutex.h"
 
-const char *apSsid = "esp32-playground";
-const char *apPassword = "123456789";
+const char *apSsid = "VIRUS_SPYWARE";
+const char *apPassword = "12345679";
 
 CustomServer server(apSsid, apPassword);
 

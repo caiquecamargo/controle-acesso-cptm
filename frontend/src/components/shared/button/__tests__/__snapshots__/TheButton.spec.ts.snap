@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TheButton.vue render a TheButton component with the passed ButtonLabel prop. 1`] = `"<button class=\\"\\">Submit</button>"`;

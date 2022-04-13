@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TheBannerContent component test should render the default component 1`] = `"<span class=\\"absolute flex items-end justify-end w-1/2 text-white bottom-1/20 right-1/20 h-1/4\\"></span>"`;

@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TheFooterSection component test should render the default component 1`] = `
-"<section class=\\"flex flex-col w-full items-start gap-3\\">
-  <div> SLOT </div>
-</section>"
-`;

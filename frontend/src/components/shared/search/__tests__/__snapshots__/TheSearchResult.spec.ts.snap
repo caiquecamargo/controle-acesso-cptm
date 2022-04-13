@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`TheSearchResult component test. should render the default component. 1`] = `"<p class=\\"font-opensans clamptext-08-12 text-primary italic mt-3\\"> Exibindo resultado da pesquisa para: <strong>teste</strong></p>"`;

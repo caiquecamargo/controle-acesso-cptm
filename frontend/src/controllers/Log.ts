@@ -18,12 +18,4 @@ export default class Log {
   info(message: string) {
     this.message.value = message;
   }
-
-  exposeToTemplate() {
-    return {
-      message: this.message,
-      onError: this.onError,
-      onSuccess: this.onSuccess,
-    };
-  }
 }

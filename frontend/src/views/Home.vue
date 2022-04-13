@@ -1,42 +1,26 @@
 <template>
-  <the-main class="flex flex-col gap-4 pt-14 lg:pt-20 pb-4 px-4">
-    <e-card to="AddUser">
-      <template #icon>
-        <user-card-icon class="text-white" />
-      </template>
-      <template #name>
-        <p
-          class="flex justify-center items-center text-white text-2xl font-bold"
-        >
-          Adicionar usuário
-        </p>
-      </template>
-    </e-card>
-    <e-card to="AllUsers">
-      <template #icon>
-        <list-card-icon class="text-white" />
-      </template>
-      <template #name>
-        <p
-          class="flex justify-center items-center text-white text-2xl font-bold"
-        >
-          Listar usuários
-        </p>
-      </template>
-    </e-card>
-  </the-main>
+  <v-page>
+    <div
+      class="grid grid-cols-2 gap-4 p-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+    >
+      <v-card-home :to="{ name: 'user-add' }">
+        <template #image>
+          <icon-local-add class="w-full h-auto" />
+        </template>
+
+        <template #content> Adicionar usuário </template>
+      </v-card-home>
+      <v-card-home :to="{ name: 'user-list' }">
+        <template #image>
+          <icon-local-list class="w-full h-auto" />
+        </template>
+
+        <template #content> Ver usuários cadastrados </template>
+      </v-card-home>
+    </div>
+  </v-page>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import ECard from "../components/app/ECard.vue";
-import TheMain from "../components/shared/main/TheMain.vue";
-import UserCardIcon from "../components/svg/UserCardIcon.vue";
-import ListCardIcon from "../components/svg/ListCardIcon.vue";
+<script setup lang="ts"></script>
 
-export default defineComponent({
-  components: { ECard, TheMain, UserCardIcon, ListCardIcon },
-});
-</script>
-
-<style lang="postcss"></style>
+<style lang="postcss" scoped></style>
