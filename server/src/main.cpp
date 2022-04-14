@@ -7,6 +7,7 @@
 #include "rfid/RFID.h"
 #include "accessController/AccessController.h"
 #include "mutex/mutex.h"
+#include "io/IO.h"
 
 const char *apSsid = "VIRUS_SPYWARE";
 const char *apPassword = "12345679";
@@ -45,6 +46,8 @@ void setup() {
   }
 
   printSPIFFSFiles();
+
+  IO::init();
 
   MutexController::create();
 

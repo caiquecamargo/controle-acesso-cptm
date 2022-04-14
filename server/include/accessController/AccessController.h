@@ -5,6 +5,7 @@
 #include <freertos/task.h>
 #include "repository/UserService.h"
 #include "mutex/mutex.h"
+#include "io/IO.h"
 
 #ifndef ACCESS_CONTROLLER_H
 #define ACCESS_CONTROLLER_H

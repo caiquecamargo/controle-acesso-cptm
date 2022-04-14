@@ -8,6 +8,7 @@
 #include <freertos/task.h>
 #include "rfid/RFID.h"
 #include "mutex/mutex.h"
+#include "io/IO.h"
 
 #ifndef CUSTOM_SERVER_H
 #define CUSTOM_SERVER_H

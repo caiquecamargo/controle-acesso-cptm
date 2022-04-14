@@ -14,12 +14,24 @@ struct UserMsg{
 UserMsg userMsg;
 const static int WEBSOCKET_REQUEST_TIMEOUT = 1000;
 
+TaskHandle_t userCreateTaskHandle;
+
+void userCreateTask(void *pvParameters) {
+  for (;;) {
+    IO::set(STATE_LED, ON_STATE);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
+    IO::set(STATE_LED, OFF_STATE);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
+  }
+}
+
 void sendMessage(void *arg) {
   Log::logS("WS: Client " + (std::string) String(userMsg.clientId).c_str(), "Running user create task...");
   int count = WEBSOCKET_REQUEST_TIMEOUT;
   std::string id;
 
   MutexController::take();
+  xTaskCreate(userCreateTask, "userCreateTask", 8192, NULL, 4, &userCreateTaskHandle);
   while(count){
     vTaskDelay(10);
     count--;
@@ -28,6 +40,7 @@ void sendMessage(void *arg) {
       break;
     }
   }
+  vTaskDelete(userCreateTaskHandle);
   MutexController::give();
 
   if (id.compare("") != 0){

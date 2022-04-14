@@ -9,10 +9,18 @@ AccessController::AccessController() :
 
 void AccessController::grant(User grantedUser) {
   Log::logS("AccessControler", "Granting access to " + grantedUser.name + " with cardId " + grantedUser.cardId);
+  IO::set(STATE_LED, ON_STATE);
+  IO::set(RELAY, ON_STATE);
+
+  vTaskDelay(3000 / portTICK_PERIOD_MS);
+
+  IO::set(STATE_LED, OFF_STATE);
+  IO::set(RELAY, OFF_STATE);
 };
 
 void AccessController::deny(std::string id) {
   Log::logS("AccessControler", "Access denied to card " + id);
+  IO::blink(STATE_LED, 5, 200);
 };
 
 void AccessController::checkCardValidity(std::string id) {
